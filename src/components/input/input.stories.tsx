@@ -7,5 +7,10 @@ export default {
 } as Meta;
 
 export const Input: Story<InputProps> = (args) => (
-  <InputComp {...args} name="firstName" error ref={null} />
+  <InputComp {...args} ref={null} />
 );
+
+Input.args = {
+  name: "firstName",
+  inputMode: "text",
+};

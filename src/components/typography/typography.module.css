@@ -1,0 +1,42 @@
+.title {
+  color: var(--color-default-500);
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 24px;
+}
+
+.body1 {
+  font-size: var(--base-font-size);
+  font-weight: 400;
+}
+
+.body2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.overline {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 600px) {
+  .title {
+    font-size: 60px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}

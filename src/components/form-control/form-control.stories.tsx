@@ -7,14 +7,14 @@ export default {
   component: FormControlComp,
 } as Meta;
 
-export const FormControl: Story<FormControlProps> = (args) => (
-  <FormControlComp
-    {...args}
-    label="First Name"
-    name="firstName"
-    hint="This is your name"
-    error
-  >
-    <Input name="firstName" error />
+// eslint-disable-next-line react/prop-types
+export const FormControl: Story<FormControlProps> = ({ error, ...args }) => (
+  <FormControlComp {...args} error={error}>
+    <Input name="firstName" error={error} />
   </FormControlComp>
 );
+
+FormControl.args = {
+  name: "firstName",
+  label: "First Name",
+};
