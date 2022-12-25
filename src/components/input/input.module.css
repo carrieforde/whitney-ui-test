@@ -1,0 +1,13 @@
+.input {
+  border: 1px solid var(--color-default-400);
+  border-radius: var(--border-radius);
+  color: var(--dark-text-color);
+  font-family: var(--font-family-body);
+  font-size: var(--base-font-size);
+  outline-color: var(--color-primary-800);
+  padding: var(--base-spacing) calc(var(--base-spacing) * 1.5);
+}
+
+.error {
+  border-color: var(--color-error-800);
+}

@@ -1,0 +1,15 @@
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hint {
+  display: block;
+  font-size: 12px;
+  margin-top: var(--base-spacing);
+}
+
+.error {
+  color: var(--color-error-800);
+}
