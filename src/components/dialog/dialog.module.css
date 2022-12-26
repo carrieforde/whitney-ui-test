@@ -1,0 +1,28 @@
+.body {
+  overflow: hidden;
+}
+
+.body::after {
+  background-color: rgb(16 42 67 / 45%);
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 0;
+}
+
+.dialog {
+  background-color: var(--body-bg-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
+  left: 50%;
+  max-width: 100%;
+  padding: 16px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  z-index: 3;
+}
