@@ -1,5 +1,6 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
+import cn from "classnames";
 import styles from "./dialog.module.css";
 
 export type DialogProps = {
@@ -12,6 +13,8 @@ export const Dialog = ({
   open,
   onClose,
 }: React.PropsWithChildren<DialogProps>) => {
+  const className = cn("dialog", styles.dialog);
+
   React.useEffect(() => {
     document.body.addEventListener(
       "click",
@@ -48,7 +51,7 @@ export const Dialog = ({
   }
 
   return createPortal(
-    <div className={styles.dialog}>{children}</div>,
+    <div className={className}>{children}</div>,
     document.body
   );
 };

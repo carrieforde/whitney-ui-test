@@ -49,7 +49,7 @@ export const Button = ({
   buttonRef,
   ...props
 }: React.PropsWithChildren<ButtonProps>) => {
-  const classNames = cn(styles.button, {
+  const classNames = cn("button", styles.button, {
     [styles[variant]]: !!variant && styles[variant],
     [styles[color]]: !!color && styles[color],
   });

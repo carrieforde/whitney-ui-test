@@ -25,7 +25,7 @@ export const Typography = ({
   variant,
 }: React.PropsWithChildren<TypographyProps>) => {
   const Comp = variant === "title" && !component ? "h1" : component ?? "p";
-  const className = cn({
+  const className = cn("typography", {
     [styles[variant ?? ""]]: !!variant && styles[variant],
   });
 

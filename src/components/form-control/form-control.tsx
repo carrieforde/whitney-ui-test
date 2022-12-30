@@ -1,4 +1,5 @@
 import * as React from "react";
+import cn from "classnames";
 import styles from "./form-control.module.css";
 
 export type FormControlProps = {
@@ -14,16 +15,24 @@ export const FormControl = ({
   name,
   hint,
   error,
-}: React.PropsWithChildren<FormControlProps>) => (
-  <div className={error ? styles.error : undefined}>
-    <label htmlFor={name} className={styles.label}>
-      {label}
-    </label>
+}: React.PropsWithChildren<FormControlProps>) => {
+  const formControlClassName = cn("form-control", {
+    [styles.error]: error,
+  });
+  const labelClassName = cn("label", styles.label);
+  const hintClassName = cn("hint", styles.hint);
 
-    {children}
+  return (
+    <div className={formControlClassName}>
+      <label htmlFor={name} className={labelClassName}>
+        {label}
+      </label>
 
-    {hint && <span className={styles.hint}>{hint}</span>}
-  </div>
-);
+      {children}
+
+      {hint && <span className={hintClassName}>{hint}</span>}
+    </div>
+  );
+};
 
 export default FormControl;
