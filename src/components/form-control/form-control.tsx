@@ -2,6 +2,20 @@ import * as React from "react";
 import cn from "classnames";
 import styles from "./form-control.module.css";
 
+type FormControlContextValue = {
+  name: string;
+  error?: boolean;
+};
+
+const defaultFormControlContextValue: FormControlContextValue = {
+  name: "",
+  error: false,
+};
+
+const FormControlContext = React.createContext(defaultFormControlContextValue);
+
+export const useFormControl = () => React.useContext(FormControlContext);
+
 export type FormControlProps = {
   label: string;
   name: string;
@@ -23,15 +37,18 @@ export const FormControl = ({
   const hintClassName = cn("hint", styles.hint);
 
   return (
-    <div className={formControlClassName}>
-      <label htmlFor={name} className={labelClassName}>
-        {label}
-      </label>
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <FormControlContext.Provider value={{ name, error }}>
+      <div className={formControlClassName}>
+        <label htmlFor={name} className={labelClassName}>
+          {label}
+        </label>
 
-      {children}
+        {children}
 
-      {hint && <span className={hintClassName}>{hint}</span>}
-    </div>
+        {hint && <span className={hintClassName}>{hint}</span>}
+      </div>
+    </FormControlContext.Provider>
   );
 };
 

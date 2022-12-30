@@ -10,7 +10,7 @@ export default {
 // eslint-disable-next-line react/prop-types
 export const FormControl: Story<FormControlProps> = ({ error, ...args }) => (
   <FormControlComp {...args} error={error}>
-    <Input name="firstName" error={error} />
+    <Input />
   </FormControlComp>
 );
 
