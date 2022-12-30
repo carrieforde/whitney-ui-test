@@ -1,19 +1,22 @@
 .button {
-  --button-main: var(--color-default-main);
-  --button-contrast: var(--color-default-contrast);
-  --button-hover: var(--color-default-600);
+  --button-main: var(--button-default-main, var(--color-default-main));
+  --button-contrast: var(
+    --button-default-contrast,
+    var(--color-default-contrast)
+  );
+  --button-hover: var(--button-default-hover, var(--color-default-600));
 
   appearance: none;
   background: none;
   background-color: transparent;
   border: 0;
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius, var(--border-radius));
   color: var(--button-main);
   cursor: pointer;
-  font-family: var(--font-family-body);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 8px 16px;
+  font-family: var(--button-font-family, var(--font-family-body));
+  font-size: var(--button-font-size, 14px);
+  font-weight: var(--button-font-weight, 600);
+  padding: var(--button-padding, 8px 16px);
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -49,19 +52,25 @@
 }
 
 .primary {
-  --button-main: var(--color-primary-main);
-  --button-contrast: var(--color-primary-contrast);
-  --button-hover: var(--color-primary-600);
+  --button-main: var(--button-primary-main, var(--color-primary-main));
+  --button-contrast: var(
+    --button-primary-contrast,
+    var(--color-primary-contrast)
+  );
+  --button-hover: var(--button-primary-hover, var(--color-primary-600));
 }
 
 .secondary {
-  --button-main: var(--color-secondary-main);
-  --button-contrast: var(--color-secondary-contrast);
-  --button-hover: var(--color-secondary-600);
+  --button-main: var(--button-secondary-main, var(--color-secondary-main));
+  --button-contrast: var(
+    --button-secondary-contrast,
+    var(--color-secondary-contrast)
+  );
+  --button-hover: var(--button-secondary-hover, var(--color-secondary-600));
 }
 
 .error {
-  --button-main: var(--color-error-main);
-  --button-contrast: var(--color-error-contrast);
-  --button-hover: var(--color-error-600);
+  --button-main: var(--button-error-main, var(--color-error-main));
+  --button-contrast: var(--button-error-contrast, var(--color-error-contrast));
+  --button-hover: var(--button-error-hover, var(--color-error-600));
 }
