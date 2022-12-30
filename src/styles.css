@@ -1,6 +1,7 @@
 /* Core settings. */
 :root {
   --base-font-size: 18px;
+  --base-font-weight: 400;
   --base-spacing: 8px;
 
   --dark-text-color: #334e68;
@@ -166,6 +167,9 @@
     --button-error-main: var(--color-error-300);
     --button-error-contrast: var(--dark-text-color);
     --button-error-hover: var(--color-error-100);
+
+    /* Typography styles */
+    --title-color: var(--color-default-300);
   }
 
   /* Global Styles */
